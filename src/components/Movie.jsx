@@ -1,7 +1,8 @@
 function Movie(props) {
     return ( 
         <div className="movie">
-            <img src="" alt="" />
+            <button className="plus-minus">+</button>
+            <img src={props.imgPath} alt="" />
         </div>
      );
 }

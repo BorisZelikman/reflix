@@ -2,6 +2,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.catalog,
 .landing {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,14 +29,19 @@
 .link {
   margin-left: 20px;
 }
+.plus-minus {
+  position: absolute;
+  right: 0px;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  margin: 2px;
+}
 .home {
   display: inline-block;
   background-color: darkolivegreen;
   width: 500px;
   height: 500px;
-}
-.catalog {
-  background-color: maroon;
 }
 .persone {
   display: inline-block;
@@ -57,6 +63,21 @@
 }
 #Tina {
   background-color: goldenrod;
+}
+
+.movie {
+  display: inline-block;
+  position: relative;
+  margin: 5px;
+}
+
+.search-budget-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  background-color: #282c34;
+  color: white;
 }
 
 @keyframes App-logo-spin {
