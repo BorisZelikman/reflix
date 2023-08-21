@@ -22,6 +22,16 @@
 .App-link {
   color: #61dafb;
 }
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+/* Styling for hover state */
+.nav-link:hover {
+  color: #007bff; /* Change this to your desired hover color */
+  text-decoration: underline;
+}
 .logo {
   position: fixed;
   right: 20px;
@@ -49,6 +59,14 @@
   display: inline-block;
   width: 200px;
   height: 150px;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+  vertical-align: center;
+}
+.shareBtn {
+  width: 200px;
+  height: 50px;
   border-radius: 10px;
   margin: 5px;
   text-align: center;

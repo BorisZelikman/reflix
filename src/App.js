@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
 import Catalog from "./components/Catalog";
 import MovieDetail from "./components/MovieDetail";
+import Share from "./components/Share";
 
 function App() {
   const [users, setUsers] = useState([
@@ -14,9 +15,7 @@ function App() {
     { name: "Tina", color: "goldenrod", budget: 10, rented: [] },
   ]);
 
-  //const [selectedUser, setSelectedUser] = useState(null);
   const [userIndex, setUserIndex] = useState(null);
-
   const selectUser = (user) => {
     setUserIndex(users.indexOf(user));
   };
@@ -35,34 +34,16 @@ function App() {
       user.rented.splice(movieIndex, 1);
       user.budget += price;
     }
-
     setUsers(usersCopy);
-    //    setUsers([...users, (users[userIndex] = user)]);
-    console.log(users);
   };
 
-  // const changeRent = (id, price) => {
-  //   if (userIndex === null) return;
-  //   const usersCopy = [...users];
-  //   const user = usersCopy[userIndex];
-  //   const idIndex = user.rented.indexOf(id);
-  //   if (idIndex === -1) {
-  //     if (user.budget >= price) {
-  //       user.rented.push(id);
-  //       user.budget -= price;
-  //     } else alert("Budget is low");
-  //   } else {
-  //     user.rented.splice(idIndex, 1);
-  //     user.budget += price;
-  //   }
-
-  //   setUsers(usersCopy);
-  //   //    setUsers([...users, (users[userIndex] = user)]);
-  //   console.log(users);
-  // };
-
-  const [details, setDetails] = useState(null);
-  const getMovieDetails = (data) => setDetails(data);
+  const shareTo = (indexTo, amount) => {
+    if (userIndex === null) return;
+    const usersCopy = [...users];
+    usersCopy[userIndex].budget -= amount;
+    usersCopy[indexTo].budget += amount;
+    setUsers(usersCopy);
+  };
 
   const [imgUrl, setImgUrl] = useState("http://image.tmdb.org/t/p/w185");
   const getImgUrl = (url) => setImgUrl(url);
@@ -83,14 +64,16 @@ function App() {
             <Catalog
               selectedUser={users[userIndex]}
               changeRent={changeRent}
-              getMovieDetails={getMovieDetails}
               getImgUrl={getImgUrl}
             />
           }
         />
+        <Route path="/movies/:id" element={<MovieDetail imgUrl={imgUrl} />} />
         <Route
-          path="/movies/:id"
-          element={<MovieDetail imgUrl={imgUrl} details={details} />}
+          path="/share"
+          element={
+            <Share users={users} userIndex={userIndex} shareTo={shareTo} />
+          }
         />
       </Routes>
     </Router>

@@ -1,0 +1,23 @@
+[33mcommit 12d2e25e16b5c8ddf6b692bc56747a28ea1912be[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: BorisZelikman <oborzelik@gmail.com>
+Date:   Mon Aug 21 14:34:00 2023 +0300
+
+    complete +trailer
+
+[33mcommit b3d8dfd12b879630145b2a129c62258b5891c1cf[m
+Author: BorisZelikman <oborzelik@gmail.com>
+Date:   Sat Aug 19 01:18:21 2023 +0300
+
+    search, movie...
+
+[33mcommit 9ecd245ea0025082aef5fbc00321d3c4223d8db2[m
+Author: BorisZelikman <oborzelik@gmail.com>
+Date:   Fri Aug 18 00:28:26 2023 +0300
+
+    Navbar, Landing and fetch api in Catalog
+
+[33mcommit eade61d62899b2dcd733d04369480102b735ff81[m
+Author: BorisZelikman <oborzelik@gmail.com>
+Date:   Wed Aug 16 18:15:29 2023 +0300
+
+    Initialize project using Create React App

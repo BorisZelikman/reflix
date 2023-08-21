@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import Movie from "./Movie";
+import {Link} from "react-router-dom";
 
 function Catalog({selectedUser, changeRent, getImgUrl}) {
 
@@ -34,8 +34,6 @@ function Catalog({selectedUser, changeRent, getImgUrl}) {
       .catch(err => console.error(err));
   }
 
-
-
   const [configuration, setConfiguration] = useState(null);
   const [movieData, setMovieData] = useState(null);
   
@@ -67,10 +65,10 @@ function Catalog({selectedUser, changeRent, getImgUrl}) {
     return (<>
       <div class="search-budget-container">
          <input type="text" class="search" placeholder="Search" value={search} onChange={(e)=>setSearch(e.target.value)} />
-         {selectedUser===undefined? null:<p class="budget">budget of {selectedUser.name}: ${selectedUser.budget}</p>}
+         {selectedUser===undefined? null:<Link className="nav-link" to="/share"><p className="budget">budget of {selectedUser.name}: ${selectedUser.budget}</p></Link>}
       </div>
       <div className="catalog">
-        {selectedUser.rented.length>0 ? (<>
+        {selectedUser && selectedUser.rented.length>0 ? (<>
           <h5>Rented:</h5>
           <div>
             {showMovies(selectedUser.rented)}
