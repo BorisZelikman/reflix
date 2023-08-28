@@ -91,8 +91,8 @@ function App() {
         <Navbar />
       </div>
       <ModalRent isOpen={isModalRentOpen} onClose={closeModalRent}>
-        <h5>Rented "{rentTitle}" Sucessfully!</h5>
-        <img src={rentGyphyUrl} />
+        <h5 className="rented-title">Rented "{rentTitle}" Sucessfully!</h5>
+        <img className="gyphy" src={rentGyphyUrl} />
       </ModalRent>
       <Routes>
         <Route

@@ -6,7 +6,7 @@ function ModalRent({isOpen, onClose, children}) {
         <div className="modal-overlay">
             <div className="modal">
                 {children}
-                <button onClick={onClose}>X</button>
+                <button className="x-button" onClick={onClose}>X</button>
             </div>
         </div>,
         document.getElementById('modal-root')
