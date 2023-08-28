@@ -9,7 +9,7 @@ function Landing({users, selectUser}) {
                     <div 
                         className="persone" 
                         style={{backgroundColor:user.color}} 
-                        onClick={(event)=>{
+                        onClick={()=>{
                             console.log("Landing: ",{user})
                             selectUser(user)}}>
                     {user.name}</div>

@@ -63,8 +63,8 @@ function Catalog({selectedUser, changeRent, getImgUrl}) {
   }
 
     return (<>
-      <div class="search-budget-container">
-         <input type="text" class="search" placeholder="Search" value={search} onChange={(e)=>setSearch(e.target.value)} />
+      <div className="search-budget-container">
+         <input type="text" className="search" placeholder="Search" value={search} onChange={(e)=>setSearch(e.target.value)} />
          {selectedUser===undefined? null:<Link className="nav-link" to="/share"><p className="budget">budget of {selectedUser.name}: ${selectedUser.budget}</p></Link>}
       </div>
       <div className="catalog">
